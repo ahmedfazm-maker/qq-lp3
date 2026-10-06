@@ -29,6 +29,7 @@ p{margin:0}
 .sec{padding:var(--sec) 0;position:relative}
 .act{display:inline-flex;align-items:center;gap:12px;margin-bottom:20px;font-family:"JetBrains Mono",monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
 .act b{font-weight:500;color:var(--lime)}
+.act::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--lime);box-shadow:0 0 0 4px rgba(198,255,52,.14)}
 .act::after{content:"";width:40px;height:1px;background:var(--l3)}
 .h2{font-size:clamp(32px,4.2vw,58px);line-height:1.06;text-wrap:balance}
 .lead{color:var(--text);font-size:clamp(16.5px,1.3vw,19px);max-width:50ch;margin-top:18px}
@@ -48,6 +49,7 @@ p{margin:0}
 .nav .wrap{display:flex;align-items:center;gap:34px;height:var(--navh);max-width:1320px}
 .logo{display:flex;align-items:center;gap:10px;font-family:Sora,sans-serif;font-weight:600;font-size:18px;letter-spacing:-.02em}
 .logo svg{width:28px;height:28px}
+.logo svg.lh{width:134px;height:27px}
 .menu{display:flex;gap:28px;font-size:14.5px;color:var(--text)}.menu a:hover{color:var(--bone)}
 .nav .side{margin-left:auto;display:flex;align-items:center;gap:14px}.nav .si{font-size:14.5px;color:var(--text)}
 @media(max-width:920px){.menu,.nav .si{display:none}}
@@ -132,7 +134,11 @@ p{margin:0}
 .dots{display:flex;gap:8px;margin-top:26px}
 .dots i{width:8px;height:8px;border-radius:50%;background:var(--l3);transition:all .35s var(--e)}
 .dots i.on{width:26px;border-radius:5px;background:var(--lime)}
-@media(max-width:920px){.ag{grid-template-columns:1fr}.carousel{height:380px}.acard{left:-115px;top:-150px;width:230px;height:300px;padding:20px}.agfacts{grid-template-columns:1fr}}
+@media(max-width:920px){.ag{grid-template-columns:1fr}.carousel{height:380px}.acard{left:-115px;top:-150px;width:230px;height:300px;padding:20px}.agfacts{grid-template-columns:1fr}
+ #agents .pin>.inner{align-items:stretch}#agents .pin>.inner>.wrap{height:100%}
+ #agents .ag{display:flex;flex-direction:column;gap:6px;padding-top:18px;padding-bottom:12px}
+ #agents .h2{font-size:clamp(26px,7.4vw,34px)}#agents .lead{font-size:15px;margin-top:10px}#agents .dots{margin-top:14px}
+ #agents .carousel{flex:1;min-height:200px;height:auto}}
 
 /* act III: fly-through */
 #journey{height:420vh}
@@ -156,7 +162,7 @@ p{margin:0}
  font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.1em;color:var(--mute)}
 .jmeter i{width:34px;height:2px;background:var(--l2);transition:background .4s}
 .jmeter i.on{background:var(--lime)}
-@media(max-height:700px) and (min-width:921px){.scard p{display:none}}
+@media(max-height:760px) and (min-width:921px){.scard{padding:20px 24px}.scard .n{font-size:44px}.scard h3{font-size:26px;margin-top:4px}.scard p{font-size:15px;margin-top:6px}.scard .art{margin-top:12px}}
 /* act IV: the platform */
 .tabs{display:inline-flex;gap:4px;padding:5px;border:1px solid var(--l2);border-radius:14px;background:var(--card);margin-top:34px;max-width:100%;overflow-x:auto;scrollbar-width:none}
 .tabs::-webkit-scrollbar{display:none}
@@ -169,7 +175,7 @@ p{margin:0}
 .checks li{display:flex;gap:10px;font-size:15px;color:var(--text)}
 .checks li::before{content:"";flex:0 0 16px;height:16px;margin-top:4px;border-radius:50%;border:1px solid var(--l3);background:radial-gradient(circle,var(--pale) 0 3px,transparent 3.5px)}
 .riser{margin-top:40px;perspective:1800px}
-.riser .tilt{transform-origin:50% 100%;will-change:transform}
+.riser .tilt{transform-origin:50% 60%;will-change:transform}
 .fadein{animation:fi .5s var(--e)}@keyframes fi{from{opacity:0;transform:translateY(8px)}}
 @media(max-width:920px){.pcopy{grid-template-columns:1fr;gap:20px}.checks{grid-template-columns:1fr}}
 /* app window, designed at 1080x660 and scaled so it stays crisp */
@@ -186,6 +192,7 @@ p{margin:0}
 .wside{flex:0 0 196px;border-right:1px solid var(--l1);padding:16px 12px;display:flex;flex-direction:column;gap:3px;background:#080A06}
 .wside .wb{display:flex;align-items:center;gap:8px;font-family:Sora,sans-serif;font-weight:600;font-size:14px;color:var(--bone);margin:0 6px 16px}
 .wside .wb svg{width:20px;height:20px}
+.wside .wb svg.lh{width:98px;height:20px}
 .wside .grp{font-family:"JetBrains Mono",monospace;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:#5d6052;margin:14px 8px 6px}
 .wside a{display:flex;align-items:center;gap:9px;padding:7px 9px;border-radius:8px;color:var(--mute);font-size:12.5px}
 .wside a i{width:6px;height:6px;border-radius:50%;background:var(--l3)}
@@ -221,6 +228,48 @@ p{margin:0}
 .inv{border:1px solid var(--l2);border-radius:9px;padding:9px 10px;background:#0F130B}
 .inv b{display:block;font-weight:500;color:var(--bone);font-size:12px}
 .inv s{display:block;text-decoration:none;font-family:"JetBrains Mono",monospace;font-size:10.5px;color:var(--pale);margin-top:3px}
+
+/* platform: tabs beside the screen, scroll moves between surfaces */
+#platform{height:360vh}
+.plat{display:grid;grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr);gap:clamp(28px,4vw,64px);align-items:center}
+#platform .h2{font-size:clamp(28px,3.2vw,46px)}
+#platform .lead{margin-top:12px;font-size:16px}
+.ptabs{display:grid;gap:6px;margin-top:22px}
+.ptab{position:relative;text-align:left;border:1px solid var(--l2);border-radius:16px;background:rgba(12,15,9,.7);color:inherit;font:inherit;padding:14px 16px;cursor:pointer;transition:border-color .3s,background .3s}
+.ptab:hover{border-color:var(--l3)}
+.ptab[aria-selected="true"]{border-color:rgba(198,255,52,.55);background:rgba(198,255,52,.06)}
+.ptab .pt{display:flex;align-items:center;gap:12px;font-family:Sora,sans-serif;font-size:17px;letter-spacing:-.02em;color:var(--text)}
+.ptab .pt i{font-style:normal;font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--mute);width:22px}
+.ptab[aria-selected="true"] .pt{color:var(--bone)}.ptab[aria-selected="true"] .pt i{color:var(--lime)}
+.ptab .pt s{text-decoration:none;margin-left:auto;font-size:13.5px;color:var(--mute);font-family:"Instrument Sans",sans-serif;letter-spacing:0}
+.ptab .pd{display:grid;grid-template-rows:0fr;transition:grid-template-rows .5s var(--e)}
+.ptab[aria-selected="true"] .pd{grid-template-rows:1fr}
+.ptab .pd>div{overflow:hidden}
+.ptab .pd p{color:var(--text);font-size:14.5px;margin-top:8px}
+.ptab .pd ul{list-style:none;margin:8px 0 0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:4px 14px}
+.ptab .pd li{font-size:13px;color:var(--text);display:flex;gap:7px}
+.ptab .pd li::before{content:"";flex:0 0 6px;height:6px;margin-top:7px;border-radius:50%;background:var(--pale)}
+.pright{position:relative}
+.riser{perspective:1800px;margin:0}
+.pcopy{display:none}
+.pprog{height:2px;background:var(--l2);border-radius:2px;margin:22px auto 0;max-width:260px;overflow:hidden}
+.pprog i{display:block;height:100%;width:25%;background:var(--lime);transition:transform .5s var(--e)}
+@media(max-height:780px) and (min-width:921px){.ptab .pd ul{display:none}#platform .lead{display:none}}
+@media(max-width:920px),(max-height:600px){
+ #platform{height:auto}#platform .pin{position:relative;height:auto;overflow:visible;padding:calc(var(--navh) + 30px) 0 60px}
+ .plat{grid-template-columns:1fr;gap:18px}
+ .ptabs{display:flex;gap:4px;padding:5px;border:1px solid var(--l2);border-radius:14px;background:var(--card);overflow-x:auto;scrollbar-width:none}
+ .ptab{flex:1 0 auto;padding:10px 14px;border:0;border-radius:10px;background:transparent;text-align:center}
+ .ptab[aria-selected="true"]{background:var(--lime)}.ptab[aria-selected="true"] .pt{color:var(--bg)}
+ .ptab .pt{justify-content:center;font-family:"Instrument Sans",sans-serif;font-size:14.5px;font-weight:500}
+ .ptab .pt i,.ptab .pt s,.ptab .pd{display:none}
+ .pcopy{display:block;margin-top:18px}.pcopy h3{font-size:21px;font-weight:400}.pcopy p{color:var(--text);font-size:15px;margin-top:6px}
+ .pcopy ul{list-style:none;margin:10px 0 0;padding:0;display:grid;gap:6px}.pcopy li{font-size:14.5px;color:var(--text);display:flex;gap:8px}
+ .pcopy li::before{content:"";flex:0 0 6px;height:6px;margin-top:8px;border-radius:50%;background:var(--pale)}
+ .pprog{display:none}
+}
+.shot{transition:opacity .35s var(--e)}.shot.swap{opacity:.15}
+
 /* act V: flip cards */
 .flips{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:56px}
 .fl{display:flex;flex-direction:column}
@@ -248,7 +297,7 @@ p{margin:0}
 
 /* who */
 .aud{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:56px}
-.au{border:1px solid var(--l2);border-radius:22px;background:var(--card);padding:28px;transition:border-color .3s,transform .5s var(--e)}
+.au{border:1px solid var(--l2);border-radius:22px;background:var(--card);padding:28px}
 .au:hover{border-color:var(--l3);transform:translateY(-6px)}
 .au .gl{height:70px;display:flex;align-items:center;gap:10px;margin-bottom:22px}
 .au .gl i{display:block;border-radius:10px;background:var(--pale)}
@@ -276,16 +325,36 @@ p{margin:0}
 .tl b{display:block;font-weight:500}.tl span{color:var(--text);font-size:14.5px}
 .tl em{font-style:normal;font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--pale);border:1px solid var(--l3);border-radius:999px;padding:3px 9px}
 @media(max-width:920px){.fin{grid-template-columns:1fr}.coin{order:-1;width:min(260px,64vw)}}
-footer{border-top:1px solid var(--l1);margin-top:var(--sec);position:relative;z-index:2;background:var(--bg)}
-footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap;padding-top:30px;padding-bottom:calc(30px + env(safe-area-inset-bottom,0px));font-size:14px;color:var(--mute)}
-footer nav{display:flex;gap:22px}footer a:hover{color:var(--bone)}
+/* ---------- footer ---------- */
+footer{position:relative;z-index:2;border-top:1px solid var(--l1);background:linear-gradient(180deg,#070906,#040503);margin-top:0}
+.fgrid{display:grid;grid-template-columns:minmax(0,1.4fr) repeat(3,minmax(0,1fr));gap:40px;padding-top:70px;padding-bottom:50px}
+.fbrand p{color:var(--text);font-size:15px;margin-top:14px;max-width:34ch}
+.social{display:flex;gap:10px;margin-top:22px}
+.social a{width:42px;height:42px;border-radius:12px;border:1px solid var(--l2);display:grid;place-items:center;color:var(--text);transition:all .25s}
+.social a:hover{border-color:var(--lime);color:var(--lime);transform:translateY(-3px)}
+.social svg{width:18px;height:18px}
+.fcol h4{font-family:"JetBrains Mono",monospace;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--mute);font-weight:500;margin-bottom:16px}
+.fcol a,.fcol span{display:block;color:var(--text);font-size:15px;padding:5px 0;transition:color .2s}.fcol a:hover{color:var(--bone)}
+.fcol .ct{display:flex;align-items:center;gap:10px}.fcol .ct svg{width:16px;height:16px;color:var(--pale);flex:0 0 auto}
+.fbar{border-top:1px solid var(--l1)}
+.fbar .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;padding-top:22px;padding-bottom:calc(26px + env(safe-area-inset-bottom,0px));font-size:13.5px;color:var(--mute)}
+.fbar nav{display:flex;gap:20px}.fbar a:hover{color:var(--bone)}
+@media(max-width:920px){.fgrid{grid-template-columns:1fr 1fr}.fbrand{grid-column:1/-1}}
+@media(max-width:520px){.fgrid{grid-template-columns:1fr}}
 main{position:relative;z-index:2}
-main>section:not(.hero):not(#order){background:var(--bg)}
+.agfacts>div,.au,.ptab{position:relative}
+.ix::before{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;opacity:0;transition:opacity .35s;z-index:0;
+ background:radial-gradient(260px circle at var(--mx,50%) var(--my,50%),rgba(198,255,52,.09),transparent 70%)}
+.ix:hover::before{opacity:1}.ix>*{position:relative;z-index:1}
+.lift{transition:transform .45s var(--e),border-color .3s,box-shadow .45s}
+.lift:hover{transform:translateY(-4px);border-color:rgba(198,255,52,.35);box-shadow:0 22px 44px -26px rgba(0,0,0,.9)}
+.tl li{transition:padding-left .35s var(--e)}.tl li:hover{padding-left:8px}.tl li:hover .n{color:var(--lime)}
+#bgf{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
 .rv{opacity:0;transform:translateY(26px);transition:opacity .9s var(--e),transform .9s var(--e)}
 .rv.go{opacity:1;transform:none}.rv.d1{transition-delay:.1s}.rv.d2{transition-delay:.2s}
 
 /* short screens: stop pinning rather than squeeze under the menu */
-@media (max-height:640px),(max-width:920px) and (max-height:820px){
+@media (max-height:560px){
  #agents{height:auto!important}#agents .pin{position:relative;height:auto;padding:calc(var(--navh) + 34px) 0 40px}
 }
 @media (max-height:640px){
@@ -301,10 +370,12 @@ main>section:not(.hero):not(#order){background:var(--bg)}
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
  <symbol id="mark" viewBox="310.13 0 424.1 429.98"><path fill="#A8E01F" d="M403.97,273.21c0-157.93,72.2-171.56,162.13-171.56,22,0,43.67,1.22,63.66,5.4-18-71.16-83.64-77.69-157.26-98.37-110.31-30.99-151.66,22.86-160.93,132.85-10.24,121.46,35.5,162.73,97.25,175.66-3.16-12.52-4.85-27.03-4.85-43.97Z"/><path fill="#C6FF34" d="M571.86,107.4c-89.93,0-162.12,13.63-162.13,171.56,0,113.31,75.55,118.03,162.13,142.36,110.31,30.99,151.66-22.86,160.93-132.85,13.55-160.8-70.99-181.07-160.93-181.07Z"/></symbol>
+ <symbol id="logoH" viewBox="0 0 2111 430"><g transform="translate(-310.13,-0.01) scale(1.0)"><path fill="#A8E01F" d="M403.97,273.21c0-157.93,72.2-171.56,162.13-171.56,22,0,43.67,1.22,63.66,5.4-18-71.16-83.64-77.69-157.26-98.37-110.31-30.99-151.66,22.86-160.93,132.85-10.24,121.46,35.5,162.73,97.25,175.66-3.16-12.52-4.85-27.03-4.85-43.97Z"/><path fill="#C6FF34" d="M571.86,107.4c-89.93,0-162.12,13.63-162.13,171.56,0,113.31,75.55,118.03,162.13,142.36,110.31,30.99,151.66-22.86,160.93-132.85,13.55-160.8-70.99-181.07-160.93-181.07Z"/></g><g transform="translate(484.29720000000003,-683.81) scale(1.5578)"><path fill="#F4F6EE" d="M98.91,490.14c48.83,0,75.98,27.65,75.98,84.21,0,39.86-13.45,65.52-38.62,76.98l15.94,33.38h-29.65l-12.95-26.91c-3.49.5-6.98.5-10.71.5h-22.92c-49.08,0-75.98-27.65-75.98-83.96s27.16-84.21,75.98-84.21h22.92ZM108.62,593.28l14.7,31.14c15.2-7.23,21.92-23.42,21.92-50.08,0-38.37-13.95-54.81-46.34-54.81h-22.92c-32.39,0-46.59,16.44-46.59,54.81s13.95,54.56,46.59,54.56h19.93l-16.94-35.63h29.65Z"/><path fill="#F4F6EE" d="M218.99,526.76v78.73c0,15.45,11.46,27.16,32.39,27.16h21.43c20.93,0,32.14-11.71,32.14-27.16v-78.73h25.91v79.72c0,30.39-19.43,51.82-57.05,51.82h-24.41c-37.62,0-57.05-21.43-57.05-51.82v-79.72h26.66Z"/><path fill="#F4F6EE" d="M379.68,477.18v30.64h-26.66v-30.64h26.66ZM379.43,526.76v131.54h-26.41v-131.54h26.41Z"/><path fill="#F4F6EE" d="M537.88,469.71v132.29c0,37.87-16.94,56.3-48.33,56.3h-36.37c-35.13,0-57.05-21.43-57.05-65.77s21.92-65.77,57.05-65.77h58.05v-57.05h26.66ZM511.22,600.75v-48.58h-55.56c-22.67,0-32.89,11.96-32.89,40.36s10.21,40.11,32.89,40.11h26.16c21.18,0,29.4-9.47,29.4-31.89Z"/><path fill="#F4F6EE" d="M654.72,490.14c48.83,0,75.98,27.65,75.98,84.21,0,39.86-13.45,65.52-38.62,76.98l15.94,33.38h-29.65l-12.95-26.91c-3.49.5-6.98.5-10.71.5h-22.92c-49.08,0-75.98-27.65-75.98-83.96s27.16-84.21,75.98-84.21h22.92ZM664.43,593.28l14.7,31.14c15.2-7.23,21.92-23.42,21.92-50.08,0-38.37-13.95-54.81-46.34-54.81h-22.92c-32.39,0-46.59,16.44-46.59,54.81s13.95,54.56,46.59,54.56h19.93l-16.94-35.63h29.65Z"/><path fill="#F4F6EE" d="M774.8,526.76v78.73c0,15.45,11.46,27.16,32.39,27.16h21.43c20.93,0,32.14-11.71,32.14-27.16v-78.73h25.91v79.72c0,30.39-19.43,51.82-57.05,51.82h-24.41c-37.62,0-57.05-21.43-57.05-51.82v-79.72h26.66Z"/><path fill="#F4F6EE" d="M987.31,526.76c34.88,0,57.05,21.42,57.05,65.77s-22.17,65.77-57.05,65.77h-27.65c-35.13,0-57.05-21.43-57.05-65.77s21.92-65.77,57.05-65.77h27.65ZM962.15,552.17c-22.92,0-32.89,11.96-32.89,40.36s9.97,40.11,32.89,40.11h22.67c22.67,0,32.89-11.71,32.89-40.11s-10.21-40.36-32.89-40.36h-22.67Z"/></g></symbol>
  <symbol id="ar" viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
 </svg>
+<canvas id="bgf" aria-hidden="true"></canvas>
 <header class="nav" id="nav"><div class="wrap">
- <a class="logo" href="#top" aria-label="QuidQuo home"><svg><use href="#mark"/></svg>QuidQuo</a>
+ <a class="logo" href="#top" aria-label="QuidQuo home"><svg class="lh" viewBox="0 0 2111 430" role="img" aria-label="QuidQuo"><use href="#logoH"/></svg></a>
  <nav class="menu" aria-label="Sections"><a href="#agents">Agents</a><a href="#journey">Journey</a><a href="#platform">Platform</a><a href="#who">Who it is for</a></nav>
  <div class="side"><a class="si" href="/login">Sign in</a><a class="btn go sm" href="/signup">Get started</a></div>
 </div></header>
@@ -313,7 +384,7 @@ main>section:not(.hero):not(#order){background:var(--bg)}
 <!-- the shared 3D space: a founder's scattered raise -->
 <div class="chaos" id="chaos" aria-hidden="true"><div class="space" id="space">
  <div class="record" id="record">
-  <div class="rh"><svg><use href="#mark"/></svg>Sanad · venture record<s>one record</s></div>
+  <div class="rh"><svg><use href="#mark"/></svg>Your venture record<s>one record</s></div>
   <div class="r">Market size<b>EGP 17.0M · verified</b></div>
   <div class="r">Pitch deck<b>linked</b></div>
   <div class="r">Financial model<b>linked</b></div>
@@ -338,7 +409,7 @@ main>section:not(.hero):not(#order){background:var(--bg)}
 <section id="order">
  <div class="pin"><div class="inner"><div class="wrap order">
   <div class="copy">
-   <div class="act"><b>Act I</b>One record</div>
+   <div class="act">One record</div>
    <h2 class="h2">One venture record</h2>
    <p class="lead">Agents read and write structured state, so a change one makes is a change every other already knows about.</p>
    <p class="lead" style="margin-top:12px">The deck says one thing, the model another, the data room a third. On QuidQuo they are the same record.</p>
@@ -351,7 +422,7 @@ main>section:not(.hero):not(#order){background:var(--bg)}
 <section id="agents">
  <div class="pin"><div class="inner"><div class="wrap ag">
   <div>
-   <div class="act"><b>Act II</b>The agentic team</div>
+   <div class="act">The agentic team</div>
    <h2 class="h2">Meet Aether, and the network behind it</h2>
    <p class="lead">Aether is your chief of staff and the agent you talk to by default. It works out what the venture needs, briefs the specialist agents, hands work between them and reports back.</p>
    <div class="dots" id="agdots" aria-hidden="true"></div>
@@ -371,7 +442,7 @@ main>section:not(.hero):not(#order){background:var(--bg)}
 <section id="journey">
  <div class="pin">
   <div class="tunnel" aria-hidden="true"><div class="horizon"></div><div class="floor" id="floor"></div><div class="stagez" id="stagez"></div></div>
-  <div class="jhead"><div class="wrap"><div class="act" style="justify-content:center"><b>Act III</b>The journey</div>
+  <div class="jhead"><div class="wrap"><div class="act" style="justify-content:center">The journey</div>
    <h2 class="h2">Comprehensive, idea to investment ready</h2></div></div>
   <div class="jmeter" id="jmeter"><span>01</span><i></i><i></i><i></i><i></i><i></i><i></i><span>06</span></div>
   <ol style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">
@@ -385,22 +456,27 @@ main>section:not(.hero):not(#order){background:var(--bg)}
 </section>
 
 <!-- ACT IV -->
-<section class="sec" id="platform">
- <div class="wrap center">
-  <div class="act rv"><b>Act IV</b>The platform</div>
-  <h2 class="h2 rv">Four surfaces, each worked in depth</h2>
-  <p class="lead rv">Where you watch the agentic team work, review what it produces, and decide.</p>
-  <div class="tabs rv" role="tablist" id="tabs" aria-label="Platform surfaces"></div>
-  <div class="pcopy" id="pcopy"></div>
-  <div class="riser" id="riser"><div class="tilt"><div class="shot" id="pshot" role="img"></div></div></div>
- </div>
+<section id="platform">
+ <div class="pin"><div class="inner"><div class="wrap plat">
+  <div class="pleft">
+   <div class="act">The platform</div>
+   <h2 class="h2">Four surfaces, each worked in depth</h2>
+   <p class="lead">Where you watch the agentic team work, review what it produces, and decide.</p>
+   <div class="ptabs" role="tablist" id="tabs" aria-label="Platform surfaces"></div>
+  </div>
+  <div class="pright">
+   <div class="riser" id="riser"><div class="tilt"><div class="shot" id="pshot" role="img"></div></div></div>
+   <div class="pcopy" id="pcopy" aria-live="polite"></div>
+   <div class="pprog" aria-hidden="true"><i id="pprog"></i></div>
+  </div>
+ </div></div></div>
 </section>
 
 <!-- ACT V -->
 <section class="sec" id="difference" style="padding-top:0">
  <div class="wrap">
   <div class="center">
-   <div class="act rv"><b>Act V</b>The difference</div>
+   <div class="act rv">The difference</div>
    <h2 class="h2 rv">What changes when agents do the work</h2>
    <p class="lead rv">Three things a founder cannot fix alone, and what the network does about each.</p>
   </div>
@@ -425,7 +501,7 @@ main>section:not(.hero):not(#order){background:var(--bg)}
 <section class="sec" id="who" style="padding-top:0">
  <div class="wrap">
   <div class="center">
-   <div class="act rv"><b>Who</b>It is for</div>
+   <div class="act rv">Who it is for</div>
    <h2 class="h2 rv">Built for the people who carry the raise</h2>
    <p class="lead rv">One venture or fifty, the agents work the same way.</p>
   </div>
@@ -441,10 +517,10 @@ main>section:not(.hero):not(#order){background:var(--bg)}
 </section>
 
 <!-- FINALE -->
-<section class="sec" id="join" style="padding-top:0">
+<section class="sec" id="join" style="padding-top:0;padding-bottom:clamp(70px,8vw,110px)">
  <div class="wrap fin">
   <div>
-   <div class="act rv"><b>Join</b>The platform</div>
+   <div class="act rv">Join the platform</div>
    <h2 class="rv">Give your venture agentic capabilities</h2>
    <p class="lead rv">Bring on a network of specialised AI agents and let them carry the work a venture needs done. It begins with onboarding and your first assessment, both free, so the agents know what they are working with before they start building.</p>
    <a class="btn go rv" href="/signup">Get started <svg><use href="#ar"/></svg></a>
@@ -460,11 +536,29 @@ main>section:not(.hero):not(#order){background:var(--bg)}
  </div>
 </section>
 </main>
-<footer><div class="wrap">
- <a class="logo" href="#top" style="font-size:16px"><svg style="width:22px;height:22px"><use href="#mark"/></svg>QuidQuo</a>
- <nav><a href="#agents">The agents</a><a href="#journey">The journey</a><a href="#platform">The platform</a><a href="/privacy">Privacy</a></nav>
- <span>&copy; 2026 QuidQuo. Capital formation, run by a specialised network of AI agents.</span>
-</div></footer>
+<footer>
+ <div class="wrap fgrid">
+  <div class="fbrand">
+   <a class="logo" href="#top" aria-label="QuidQuo home"><svg class="lh" viewBox="0 0 2111 430"><use href="#logoH"/></svg></a>
+   <p>Capital formation, run by a specialised network of AI agents.</p>
+   <div class="social" aria-label="QuidQuo on social media">
+    <a href="https://www.linkedin.com/company/quidquo" aria-label="LinkedIn" rel="noopener" target="_blank"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.75h4v11H3zM9.75 9.75h3.83v1.5h.06c.53-1 1.84-2.06 3.79-2.06 4.05 0 4.8 2.67 4.8 6.13v5.43h-4v-4.82c0-1.15-.02-2.63-1.6-2.63-1.6 0-1.85 1.25-1.85 2.55v4.9h-4z"/></svg></a>
+    <a href="https://x.com/quidquo" aria-label="X" rel="noopener" target="_blank"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.75 3h3.07l-6.7 7.66L22 21h-6.18l-4.84-6.33L5.44 21H2.37l7.17-8.2L2 3h6.33l4.38 5.79zm-1.08 16.17h1.7L7.4 4.74H5.58z"/></svg></a>
+    <a href="https://www.instagram.com/quidquo" aria-label="Instagram" rel="noopener" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1" fill="currentColor" stroke="none"/></svg></a>
+    <a href="https://www.youtube.com/@quidquo" aria-label="YouTube" rel="noopener" target="_blank"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 12s0-3.6-.46-5.33a2.78 2.78 0 0 0-1.95-1.97C18.88 4.25 12 4.25 12 4.25s-6.88 0-8.59.45A2.78 2.78 0 0 0 1.46 6.67C1 8.4 1 12 1 12s0 3.6.46 5.33a2.78 2.78 0 0 0 1.95 1.97c1.71.45 8.59.45 8.59.45s6.88 0 8.59-.45a2.78 2.78 0 0 0 1.95-1.97C23 15.6 23 12 23 12zM9.75 15.5v-7l6 3.5z"/></svg></a>
+   </div>
+  </div>
+  <div class="fcol"><h4>Platform</h4><a href="#agents">The agents</a><a href="#journey">The journey</a><a href="#platform">The platform</a><a href="#who">Who it is for</a></div>
+  <div class="fcol"><h4>Company</h4><a href="/about">About</a><a href="/careers">Careers</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></div>
+  <div class="fcol"><h4>Contact</h4>
+   <a class="ct" href="mailto:hello@quidquo.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3.5 6.5l8.5 6 8.5-6"/></svg>hello@quidquo.com</a>
+   <a class="ct" href="mailto:partners@quidquo.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="9" cy="9" r="3.2"/><path d="M3 19c.8-3.2 3.2-5 6-5s5.2 1.8 6 5"/><path d="M16 11h5M18.5 8.5v5"/></svg>partners@quidquo.com</a>
+   <span class="ct"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Cairo, Egypt</span>
+  </div>
+ </div>
+ <div class="fbar"><div class="wrap"><span>&copy; 2026 QuidQuo. All rights reserved.</span>
+  <nav><a href="/privacy">Privacy</a><a href="/terms">Terms</a><a href="mailto:hello@quidquo.com">Contact us</a></nav></div></div>
+</footer>
 <script>
 (function(){
 var RM=matchMedia('(prefers-reduced-motion: reduce)').matches,fine=matchMedia('(hover:hover) and (pointer:fine)').matches;
@@ -479,10 +573,10 @@ var FR=[
  ['<div class="t">Pitch deck<span>slide 6</span></div><div class="big">EGP 340M</div><div class="ln" style="width:80%"></div><div class="ln" style="width:55%"></div>',190,[.12,.22,120,-14,18,-6]],
  ['<div class="t">model_v7.xlsx<span class="red">!</span></div><div class="sheet"><span>TAM</span><span class="h">290M</span><span>SAM</span><span>?</span><span>Y3</span><span>26.8M</span><span>CAC</span><span>#REF</span></div>',210,[.84,.2,60,10,-22,5]],
  ['<div class="t">Data room</div><div style="font-size:14px;color:var(--bone)">v7 final FINAL (2)</div><div class="ln" style="width:70%"></div>',180,[.08,.66,40,8,24,4]],
- ['TAM? ask Karim<br>which number<br>do we send',150,[.9,.62,160,-6,-16,8],'note'],
+ ['TAM? ask the<br>co-founder which<br>number we send',150,[.9,.62,160,-6,-16,8],'note'],
  ['<div class="t">Email<span>14 replies</span></div><div style="color:var(--bone)">Re: re: updated model</div><div class="ln" style="width:90%"></div><div class="ln" style="width:60%"></div>',200,[.2,.86,-80,16,10,-4]],
  ['<div class="t">One-pager</div><div class="big amb">310M</div><div style="font-size:11px;color:var(--mute);margin-top:6px">market opportunity</div>',150,[.74,.85,-40,-12,-12,6]],
- ['<div class="t">Investor call<span>Thu</span></div><div style="color:var(--bone)">Delta Seed</div><div style="font-size:11px;color:var(--hold);margin-top:4px">"How was the market counted?"</div>',200,[.5,.08,-160,20,0,-3]],
+ ['<div class="t">Investor call<span>Thu</span></div><div style="color:var(--bone)">Seed fund</div><div style="font-size:11px;color:var(--hold);margin-top:4px">"How was the market counted?"</div>',200,[.5,.08,-160,20,0,-3]],
  ['<div class="t">Cap table<span>draft 3</span></div><div class="ln" style="width:85%"></div><div class="ln" style="width:65%"></div><div class="ln" style="width:40%"></div>',170,[.32,.06,-60,-10,16,5]],
  ['<div class="t">Readiness</div><div class="big">Looks ready</div><div style="font-size:11px;color:var(--mute);margin-top:6px">sending tonight</div>',190,[.62,.5,-260,-8,-10,-3]],
  ['<div class="t">Chart<span>Y1 to Y3</span></div><svg viewBox="0 0 160 50" width="100%" height="50"><path d="M0 46 L40 40 L80 30 L120 12 L160 4" fill="none" stroke="#888A7C" stroke-width="2"/></svg>',180,[.36,.5,-300,12,14,4]]];
@@ -503,7 +597,7 @@ function chaosUpdate(t){
   var sx=lerp(s[0]*W,gx,g)-(f.w/2),sy=lerp(s[1]*H,gy,g)-40,ex=rc[0]-f.w/2,ey=rc[1]-40;
   var x=lerp(sx,ex,k),y=lerp(sy,ey,k)+bob-release,z=lerp(s[2],-40,k),sc=lerp(1,.4,k);
   f.el.style.transform='translate3d('+x.toFixed(1)+'px,'+y.toFixed(1)+'px,'+z.toFixed(0)+'px) rotateX('+lerp(s[3],0,k).toFixed(1)+'deg) rotateY('+lerp(s[4],0,k).toFixed(1)+'deg) rotateZ('+lerp(s[5],0,k).toFixed(1)+'deg) scale('+sc.toFixed(3)+')';
-  f.el.style.opacity=String((narrow&&k<.05?.3:1)*(1-clamp((k-.82)/.18))).slice(0,5);});
+  f.el.style.opacity=String((lerp(narrow?.16:.26,1,clamp(k*1.6)))*(1-clamp((k-.82)/.18))).slice(0,5);});
  var ro=clamp((a-.72)/.28);
  record.style.opacity=String(ro.toFixed(3));
  record.style.transform='translate3d('+(rc[0]-rw/2).toFixed(1)+'px,'+(rc[1]-rh/2-release).toFixed(1)+'px,0) scale('+(.86+.14*ro).toFixed(3)+')';
@@ -513,7 +607,7 @@ function chaosUpdate(t){
 var AG=[['ae','Aether','Chief of staff','Decides what the venture needs and who is needed for it, briefs them, hands off, and reports back. Present from your first message and never removed from the team.'],
  ['ID','Identity','Founders','Learns you and your co-founders. The progress bar is how much your chief of staff knows about you, not form completion.'],
  ['AS','Assessment','Diagnosis','Scores the venture from evidence, recalculating your figures from source rather than accepting them.'],
- ['BD','Build','Investment case','Ideation through to investment readiness, drafting each section and waiting for your approval before anything lands.'],
+ ['BD','Build','Venture building','Ideation through to investment readiness, drafting each section and waiting for your approval before anything lands.'],
  ['DF','Deal flow','The raise','Materials, valuation, terms and full pipeline management. It drafts; you send.'],
  ['MK','Market','What changed','Watches the market on the venture\u2019s behalf and brings back what moved, with the source attached.'],
  ['+','More specialists','As it grows','New agents join as the platform expands. You staff only what the venture needs, and stand them down when the work changes.']];
@@ -522,13 +616,14 @@ AG.forEach(function(a,i){var c=document.createElement('div');c.className='acard'
  c.innerHTML='<div class="ic">'+(a[0]==='ae'?'<svg><use href="#mark"/></svg>':a[0])+'</div><div class="role">'+a[2]+'</div><h3>'+a[1]+'</h3><p>'+a[3]+'</p>';
  cyl.appendChild(c);cards.push(c);var d=document.createElement('i');agdots.appendChild(d);dts.push(d);});
 var crot=0,cAuto=0;
-function carouselUpdate(t){var narrow=W<=920,cw=narrow?230:260,R=Math.round(cw/2/Math.tan(Math.PI/N))+(narrow?18:40);
+var carEl=document.getElementById('carousel');
+function carouselUpdate(t){var narrow=W<=920,cw=narrow?230:260,R=Math.round(cw/2/Math.tan(Math.PI/N))+(narrow?18:40),csc=narrow?Math.min(1,carEl.clientHeight/330):1;
  var pinned=agentsEl.offsetHeight>H*1.5,p=pinned?prog(agentsEl):((t/5200)%N)/N;
  var s=clamp(p)*(N-1),si=Math.min(N-2,Math.floor(s)),sf=s-si,snap=si+eio(clamp((sf-.22)/.56));if(s>=N-1)snap=N-1;
  var target=-snap*STEP;
  if(!pinned&&!RM)target=-Math.floor(p*N)*STEP;
  crot+=(target-crot)*.1;
- cyl.style.transform='translateZ('+(-R)+'px) rotateY('+crot.toFixed(2)+'deg)';
+ cyl.style.transform='scale3d('+csc.toFixed(3)+','+csc.toFixed(3)+','+csc.toFixed(3)+') translateZ('+(-R)+'px) rotateY('+crot.toFixed(2)+'deg)';
  var act=Math.round(-crot/STEP);
  cards.forEach(function(c,i){var ang=i*STEP+crot,f=Math.cos(ang*Math.PI/180);
   c.style.transform='rotateY('+(i*STEP)+'deg) translateZ('+R+'px)';c.style.opacity=String(Math.max(.12,.25+.75*Math.max(0,f)).toFixed(3));
@@ -559,13 +654,13 @@ function tunnelUpdate(){var narrow=W<=920,D=narrow?900:1150,p=RM?1:prog(journey)
 var MARK='<svg><use href="#mark"/></svg>';
 function side(on){var N=[['Command centre','watch'],['Venture context','ctx'],['Fundraising','raise'],['Knowledge base','kb']],
  A=[['Aether','ae'],['Identity','id'],['Assessment','as'],['Build','bd'],['Readiness','rd']];
- return '<aside class="wside"><div class="wb">'+MARK+'QuidQuo</div>'+N.map(function(n){return '<a class="'+(on===n[1]?'on':'')+'"><i></i>'+n[0]+'</a>'}).join('')+
+ return '<aside class="wside"><div class="wb"><svg class="lh" viewBox="0 0 2111 430"><use href="#logoH"/></svg></div>'+N.map(function(n){return '<a class="'+(on===n[1]?'on':'')+'"><i></i>'+n[0]+'</a>'}).join('')+
  '<div class="grp">Agents</div>'+A.map(function(n){return '<a class="'+(on===n[1]?'on':'')+'"><i></i>'+n[0]+'</a>'}).join('')+'</aside>';}
 function win(url,on,main){return '<div class="win"><div class="wbar"><i></i><i></i><i></i><span>app.quidquo.com/'+url+'</span></div><div class="wapp">'+side(on)+'<div class="wmain">'+main+'</div></div></div>';}
 function mb(p,h){return '<span class="mbar"><i class="'+(h?'h':'')+'" style="width:'+p+'%"></i></span>';}
 
 /* ---------- hero: Aether at work, live ---------- */
-var HERO=win('sanad/aether','ae',
+var HERO=win('venture/aether','ae',
  '<div class="wtop"><h4>Aether</h4><span class="chip up">Live</span><span class="sp"></span><span class="chip">4 agents active</span></div>'+
  '<div style="flex:1;display:flex;flex-direction:column;gap:12px;overflow:hidden">'+
  '<div ><div class="who">Aether</div><div class="bub">Your market section is the weakest part of the case, so I am bringing in Build to recount it from source.</div></div>'+
@@ -580,8 +675,8 @@ var HERO=win('sanad/aether','ae',
  '<div ><div class="bub me">Approved. Replace it.</div></div></div>');
 /* ---------- product screens for the tour ---------- */
 var SCREENS={
- Assess:win('sanad/assessment','as',
- '<div class="wtop"><h4>Venture assessment</h4><span class="chip pale">Sanad</span><span class="chip">Prototype</span><span class="sp"></span><span class="chip hold">Not ready</span></div>'+
+ Assess:win('venture/assessment','as',
+ '<div class="wtop"><h4>Venture assessment</h4><span class="chip pale">Your venture</span><span class="chip">Prototype</span><span class="sp"></span><span class="chip hold">Not ready</span></div>'+
  '<div class="wgrid" style="grid-template-columns:repeat(4,1fr)">'+
  '<div class="card"><div class="kl">Composite</div><div class="kv">48</div><div class="ks">of 100</div></div>'+
  '<div class="card"><div class="kl">Confidence</div><div class="kv">0.38</div><div class="ks">capped by weakest input</div></div>'+
@@ -600,7 +695,7 @@ var SCREENS={
  '<div class="row"><span class="k">Absent</span>'+mb(29,1)+'<span class="v">11</span></div></div></div>'+
  '<div class="card" style="display:flex;align-items:center;gap:14px"><span class="chip down">Recounted</span>'+
  '<span style="flex:1">Market size you entered: <s style="color:var(--mute)">EGP 340M</s>. Counted from the licence register: <b style="color:var(--pale);font-weight:500">EGP 17.0M</b></span><span class="wbtn">See the working</span></div>'),
- Build:win('sanad/venture-file','ctx',
+ Build:win('venture/venture-file','ctx',
  '<div class="wtop"><h4>Venture file</h4><span class="chip pale">12 sections</span><span class="sp"></span><span class="chip up">42 approved</span></div>'+
  '<div class="wgrid" style="grid-template-columns:1fr 1.25fr;flex:1;min-height:0"><div class="card" style="padding:8px 14px">'+
  [['01 Identity','up','approved'],['02 Assessment','up','approved'],['03 Ideation','up','approved'],['04 Market context','up','approved'],
@@ -615,16 +710,16 @@ var SCREENS={
  '<div class="row"><span class="k">Eval set</span><span class="chip hold">6 of 16</span></div>'+
  '<div class="row"><span class="k">MVP checks</span><span class="chip hold">4 of 6</span></div>'+
  '<div style="display:flex;gap:8px;margin-top:14px"><span class="wbtn go">Approve section</span><span class="wbtn">Request changes</span></div></div></div>'),
- Raise:win('sanad/fundraising','raise',
+ Raise:win('venture/fundraising','raise',
  '<div class="wtop"><h4>Fundraising pipeline</h4><span class="sp"></span><span class="chip">Target EGP 3.2M</span><span class="chip up">Committed 1.2M</span></div>'+
  '<div class="wgrid" style="grid-template-columns:repeat(5,minmax(0,1fr));flex:1;min-height:0">'+
- [['Scouting','4',[['Amal Ventures','EGP 1.5M'],['Osman Group','EGP 1.2M']]],['Connect','2',[['Nile Angels','EGP 800K']]],
-  ['Align','3',[['Karim Farouk','EGP 400K'],['Cairo Growth','EGP 600K']]],['Disclose','2',[['Delta Seed Fund','EGP 1.0M'],['Levant Ventures','EGP 900K']]],
-  ['Commit','1',[['Sawari Ventures','EGP 1.2M']]]]
+ [['Scouting','4',[['Regional VC','EGP 1.5M'],['Family office','EGP 1.2M']]],['Connect','2',[['Angel syndicate','EGP 800K']]],
+  ['Align','3',[['Angel investor','EGP 400K'],['Growth fund','EGP 600K']]],['Disclose','2',[['Seed fund','EGP 1.0M'],['Corporate VC','EGP 900K']]],
+  ['Commit','1',[['Pre-seed fund','EGP 1.2M']]]]
  .map(function(c){return '<div class="kcol"><h5>'+c[0]+'<span>'+c[1]+'</span></h5>'+c[2].map(function(v){return '<div class="inv"><b>'+v[0]+'</b><s>'+v[1]+'</s></div>'}).join('')+'</div>'}).join('')+'</div>'+
  '<div class="card" style="display:flex;align-items:center;gap:14px"><span class="kl">Progress</span><span class="mbar" style="flex:1"><i style="width:37.5%"></i></span>'+
  '<span style="font-family:JetBrains Mono,monospace;color:var(--pale)">37.5%</span><span class="wbtn">Send investor update</span></div>'),
- Watch:win('sanad/command','watch',
+ Watch:win('venture/command','watch',
  '<div class="wtop"><h4>Command centre</h4><span class="chip up">All systems live</span><span class="sp"></span><span class="chip">Today</span></div>'+
  '<div class="wgrid" style="grid-template-columns:repeat(4,1fr)">'+
  '<div class="card"><div class="kl">Agents active</div><div class="kv">4</div><div class="ks">2 running now</div></div>'+
@@ -638,25 +733,32 @@ var SCREENS={
  '<div class="row"><span class="k">Build · financial model</span><span class="chip up">running</span></div>'+
  '<div class="row"><span class="k">Assessment · rescore</span><span class="chip up">done</span></div>'+
  '<div class="row"><span class="k">Year 3 above market ceiling</span><span class="chip down">conflict</span></div>'+
- '<div class="row"><span class="k">Delta Seed opened the memo</span><span class="chip pale">2h</span></div></div></div>')};
+ '<div class="row"><span class="k">A seed fund opened the memo</span><span class="chip pale">2h</span></div></div></div>')};
 var TOUR=[{k:'Assess',h:'Know exactly where the venture stands',p:'A full diagnosis across four dimensions and fourteen sub-pillars, with every score traced to its evidence.',c:['Your figures recounted from source','Evidence graded, never hidden','Confidence shown per dimension','Blocking findings named plainly']},
  {k:'Build',h:'The investment case, section by section',p:'The agents draft every section from ideation to the financial model. Nothing lands until you approve it.',c:['Twelve sections, one record','Every draft waits for approval','Contradictions surfaced','Change once, it follows everywhere']},
  {k:'Raise',h:'Run the raise with the record behind you',p:'Materials, valuation, terms and the pipeline, all generated from the same record you approved.',c:['Teaser, deck and memo','Valuation with the working shown','Data room access per investor','Updates built from live numbers']},
  {k:'Watch',h:'One place to see the whole venture',p:'What the agents are working on, what needs your decision, and how the business is actually performing.',c:['Live agent activity','Decisions waiting on you','Performance from your systems','Alerts when things contradict']}];
-var tabs=document.getElementById('tabs'),pcopy=document.getElementById('pcopy'),pshot=document.getElementById('pshot'),riser=document.getElementById('riser'),rtilt=riser.firstElementChild;
+var tabs=document.getElementById('tabs'),pcopy=document.getElementById('pcopy'),pshot=document.getElementById('pshot'),riser=document.getElementById('riser'),rtilt=riser.firstElementChild,
+ platEl=document.getElementById('platform'),pprog=document.getElementById('pprog'),cur=-1,swapT=0;
 function scale(){[].forEach.call(document.querySelectorAll('.shot'),function(s){if(!s.firstChild)return;var crop=W<640;s.classList.toggle('crop',crop);
  s.firstChild.style.transform='scale('+(s.clientWidth/(crop?884:1080))+')'+(crop?' translateX(-196px)':'');});}
-function sel(i){[].forEach.call(tabs.children,function(b,k){b.setAttribute('aria-selected',k===i?'true':'false');b.tabIndex=k===i?0:-1});var x=TOUR[i];
- pcopy.innerHTML='<div class="fadein"><h3>'+x.h+'</h3><p class="lead">'+x.p+'</p></div><ul class="checks fadein">'+x.c.map(function(c){return '<li>'+c+'</li>'}).join('')+'</ul>';
- pshot.innerHTML=SCREENS[x.k];pshot.setAttribute('aria-label',x.k+' screen');pshot.firstChild.classList.add('fadein');scale();}
-TOUR.forEach(function(x,i){var b=document.createElement('button');b.className='tab';b.setAttribute('role','tab');b.textContent=x.k;b.addEventListener('click',function(){sel(i)});tabs.appendChild(b);});
-tabs.addEventListener('keydown',function(e){var i=[].findIndex.call(tabs.children,function(b){return b.getAttribute('aria-selected')==='true'});
- if(e.key==='ArrowRight'||e.key==='ArrowLeft'){e.preventDefault();i=(i+(e.key==='ArrowRight'?1:3))%4;sel(i);tabs.children[i].focus();}});
+function ul(c){return '<ul>'+c.map(function(x){return '<li>'+x+'</li>'}).join('')+'</ul>';}
+TOUR.forEach(function(x,i){var b=document.createElement('button');b.className='ptab';b.setAttribute('role','tab');
+ b.innerHTML='<span class="pt"><i>0'+(i+1)+'</i>'+x.k+'<s>'+x.h+'</s></span><span class="pd"><div><p>'+x.p+'</p>'+ul(x.c)+'</div></span>';
+ b.addEventListener('click',function(){pick(i)});tabs.appendChild(b);});
+function pinnedPlat(){return getComputedStyle(platEl.querySelector('.pin')).position==='sticky';}
+function pick(i){if(pinnedPlat()){var span=platEl.offsetHeight-H,y=platEl.offsetTop+span*(i+.5)/4;window.scrollTo({top:y,behavior:RM?'auto':'smooth'});}sel(i);}
+function sel(i){if(i===cur)return;cur=i;[].forEach.call(tabs.children,function(b,k){b.setAttribute('aria-selected',k===i?'true':'false');b.tabIndex=k===i?0:-1});var x=TOUR[i];
+ pcopy.innerHTML='<div class="fadein"><h3>'+x.h+'</h3><p>'+x.p+'</p>'+ul(x.c)+'</div>';pprog.style.transform='translateX('+(i*100)+'%)';
+ pshot.classList.add('swap');clearTimeout(swapT);swapT=setTimeout(function(){pshot.innerHTML=SCREENS[x.k];pshot.setAttribute('aria-label',x.k+' screen');scale();pshot.classList.remove('swap');},RM?0:180);}
+tabs.addEventListener('keydown',function(e){if(e.key==='ArrowDown'||e.key==='ArrowRight'||e.key==='ArrowUp'||e.key==='ArrowLeft'){e.preventDefault();var i=(cur+((e.key==='ArrowDown'||e.key==='ArrowRight')?1:3))%4;pick(i);tabs.children[i].focus();}});
 sel(0);
-var re=0;
-function riserUpdate(){var r=riser.getBoundingClientRect();if(r.bottom<-200||r.top>H+200)return;var e=RM?1:clamp((H-r.top)/(H*.9));e=1-Math.pow(1-e,3);
- re+=(e-re)*.14;var k=1-re;
- rtilt.style.transform='rotateX('+(58*k).toFixed(2)+'deg) translate3d(0,'+(70*k).toFixed(1)+'px,'+(-160*k).toFixed(0)+'px) scale('+(.88+.12*re).toFixed(3)+')';}
+var re=0,pmx=0,pmy=0,ptx=0,pty=0;
+if(fine){riser.addEventListener('pointermove',function(e){var r=riser.getBoundingClientRect();ptx=(e.clientX-r.left)/r.width-.5;pty=(e.clientY-r.top)/r.height-.5;});riser.addEventListener('pointerleave',function(){ptx=0;pty=0;});}
+function riserUpdate(){var r=platEl.getBoundingClientRect();if(r.bottom<-200||r.top>H+200)return;
+ if(pinnedPlat()){var span=platEl.offsetHeight-H,p=clamp(-r.top/span);sel(Math.min(3,Math.floor(p*4)));}
+ var e=RM?1:clamp((H-r.top)/(H*.85));e=1-Math.pow(1-e,3);re+=(e-re)*.14;var k=1-re;pmx+=(ptx-pmx)*.08;pmy+=(pty-pmy)*.08;
+ rtilt.style.transform='rotateX('+(50*k-pmy*5).toFixed(2)+'deg) rotateY('+(pmx*6).toFixed(2)+'deg) translate3d(0,'+(60*k).toFixed(1)+'px,'+(-160*k).toFixed(0)+'px) scale('+(.88+.12*re).toFixed(3)+')';}
 
 /* ================= Act V: flip cards ================= */
 var flips=[].slice.call(document.querySelectorAll('.flip'));
@@ -679,6 +781,33 @@ function coinUpdate(t){var r=coin.getBoundingClientRect();if(r.bottom<-100||r.to
  var p=clamp((H-r.top)/(H+r.height)),ty_=RM?-18:Math.sin(t*.0005)*28+(p-.5)*50+ctx_*40,tx_=RM?8:8-cty*22;
  cry+=(ty_-cry)*.08;crx+=(tx_-crx)*.08;rot.style.transform='rotateX('+crx.toFixed(2)+'deg) rotateY('+cry.toFixed(2)+'deg)';}
 
+
+/* ================= background: a faint ledger that answers the cursor ================= */
+var bg=document.getElementById('bgf'),bx=bg.getContext('2d'),BG={x:-999,y:-999,tx:-999,ty:-999,a:0,ta:0,last:0},GAP=34,pulses=[];
+function bgSize(){var dpr=Math.min(2,devicePixelRatio||1);bg.width=W*dpr;bg.height=H*dpr;bx.setTransform(dpr,0,0,dpr,0,0);}
+bgSize();addEventListener('resize',bgSize);
+addEventListener('pointermove',function(e){BG.tx=e.clientX;BG.ty=e.clientY;BG.ta=1;BG.last=performance.now();},{passive:true});
+addEventListener('pointerdown',function(e){pulses.push({x:e.clientX,y:e.clientY,t:performance.now()});},{passive:true});
+document.documentElement.addEventListener('mouseleave',function(){BG.ta=0;});
+function bgUpdate(t){if(t-BG.last>2600)BG.ta=0;
+ if(!fine&&!RM&&t-BG.last>2600){BG.tx=W*(.5+.38*Math.sin(t*.00021));BG.ty=H*(.5+.34*Math.sin(t*.00017+1));BG.ta=.55;}
+ BG.x+=(BG.tx-BG.x)*.14;BG.y+=(BG.ty-BG.y)*.14;BG.a+=(BG.ta-BG.a)*.06;
+ bx.clearRect(0,0,W,H);var oy=-(scrollY*.35)%GAP,R=170;
+ pulses=pulses.filter(function(p){return t-p.t<1600});
+ for(var y=oy;y<H+GAP;y+=GAP){for(var x=GAP/2;x<W;x+=GAP){
+  var dx=x-BG.x,dy=y-BG.y,d=Math.sqrt(dx*dx+dy*dy),f=d<R?(1-d/R)*BG.a:0,px=x,py=y;
+  for(var q=0;q<pulses.length;q++){var P=pulses[q],age=(t-P.t)/1600,pd=Math.abs(Math.hypot(x-P.x,y-P.y)-age*520);if(pd<26)f=Math.max(f,(1-pd/26)*(1-age));}
+  if(f>0&&d>0){px-=dx/d*f*5;py-=dy/d*f*5;}
+  if(f>.02){bx.fillStyle='rgba(198,255,52,'+(.05+f*.42).toFixed(3)+')';bx.beginPath();bx.arc(px,py,1+f*1.6,0,6.283);bx.fill();}
+  else{bx.fillStyle='rgba(244,246,238,.045)';bx.fillRect(px-.6,py-.6,1.2,1.2);}}}
+ if(BG.a>.05){bx.strokeStyle='rgba(198,255,52,'+(.05*BG.a).toFixed(3)+')';bx.lineWidth=1;bx.beginPath();
+  var sx=Math.round((BG.x-GAP/2)/GAP)*GAP+GAP/2,sy=Math.round((BG.y-oy)/GAP)*GAP+oy;bx.moveTo(sx,0);bx.lineTo(sx,H);bx.moveTo(0,sy);bx.lineTo(W,sy);bx.stroke();}}
+
+
+[].forEach.call(document.querySelectorAll('.agfacts>div,.au,.acard,.scard,.record,.ptab'),function(el){el.classList.add('ix');
+ el.addEventListener('pointermove',function(e){var r=el.getBoundingClientRect();el.style.setProperty('--mx',(e.clientX-r.left)+'px');el.style.setProperty('--my',(e.clientY-r.top)+'px');});});
+[].forEach.call(document.querySelectorAll('.agfacts>div,.au,.flip'),function(el){if(fine)el.classList.add('lift');});
+
 /* ================= reveals, nav, progress, loop ================= */
 var io=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;e.target.classList.add('go');
  var f=e.target.querySelector&&e.target.querySelector('.flip');
@@ -690,7 +819,7 @@ addEventListener('resize',function(){W=innerWidth;H=innerHeight;scale();});
 new ResizeObserver(scale).observe(document.body);
 if(document.fonts&&document.fonts.ready)document.fonts.ready.then(scale);
 (function frame(t){nav.classList.toggle('on',scrollY>12);var h=document.documentElement.scrollHeight-H;pg.style.transform='scaleX('+(h>0?scrollY/h:0).toFixed(4)+')';
- chaosUpdate(t);carouselUpdate(t);tunnelUpdate();riserUpdate();coinUpdate(t);requestAnimationFrame(frame);})(performance.now());
+ bgUpdate(t);chaosUpdate(t);carouselUpdate(t);tunnelUpdate();riserUpdate();coinUpdate(t);requestAnimationFrame(frame);})(performance.now());
 })();
 </script>
 </body>
