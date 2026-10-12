@@ -82,22 +82,25 @@ p{margin:0}
 .record .rh{display:flex;align-items:center;gap:10px;font-family:Sora,sans-serif;font-size:16px;margin-bottom:10px}
 .record .rh svg{width:22px;height:22px}
 .record .rh s{text-decoration:none;margin-left:auto;font-family:"JetBrains Mono",monospace;font-size:10.5px;color:var(--up);border:1px solid rgba(0,229,160,.4);border-radius:999px;padding:3px 8px}
-.record{width:min(360px,86vw)}
-.record .chg{display:flex;gap:11px;align-items:flex-start;padding:11px 12px;border-radius:12px;background:rgba(198,255,52,.07);border:1px solid rgba(198,255,52,.22);margin-bottom:12px}
-.record .chg b{display:block;font-weight:500;font-size:13.5px;color:var(--bone)}
-.record .chg span:not(.ag){display:block;font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--pale);margin-top:3px}
-.record .chg s{color:var(--mute)}
+.record{width:min(370px,88vw)}
+.record .abd{flex:0 0 26px;width:26px;height:26px;display:inline-flex;align-items:center;justify-content:center;padding:0;margin:0;
+ border-radius:7px;border:1px solid var(--l3);background:#0D1009;font-family:"JetBrains Mono",monospace;font-size:10px;line-height:1;letter-spacing:0;color:var(--pale);text-align:center}
+.record .abd.ae{color:var(--hold);border-color:rgba(255,176,32,.45);font-family:Sora,sans-serif;font-size:12px}
+.record .chg{display:flex;gap:12px;align-items:flex-start;padding:12px 14px;border-radius:13px;background:rgba(198,255,52,.07);border:1px solid rgba(198,255,52,.24);margin-bottom:14px}
+.record .chg .ct{flex:1 1 auto;min-width:0}
+.record .chg b{display:block;font-weight:500;font-size:14px;line-height:1.35;color:var(--bone)}
+.record .chg .ct span{display:block;font-family:"JetBrains Mono",monospace;font-size:11.5px;line-height:1.5;color:var(--pale);margin-top:4px}
+.record .chg del{color:var(--mute);text-decoration-thickness:1px}
 .record .rl{font-family:"JetBrains Mono",monospace;font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--mute);margin-bottom:2px}
-.record .ag{flex:0 0 auto;width:24px;height:24px;border-radius:7px;border:1px solid var(--l3);display:grid;place-items:center;font-family:"JetBrains Mono",monospace;font-size:9.5px;color:var(--pale);background:#0D1009}
-.record .ag.ae{color:var(--hold);border-color:rgba(255,176,32,.45)}
-.record .r{display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid var(--l1);font-size:13px;color:var(--text)}
+.record .r{display:flex;align-items:center;gap:12px;padding:9px 0;border-bottom:1px solid var(--l1);font-size:13.5px;color:var(--text)}
 .record .r:last-child{border-bottom:0}
-.record .r b{margin-left:auto;font-family:"JetBrains Mono",monospace;font-weight:500;font-size:11px;color:var(--up);opacity:.25;transition:opacity .4s}
+.record .r .rt{flex:1 1 auto;min-width:0;line-height:1.35}
+.record .r b{flex:0 0 auto;white-space:nowrap;font-family:"JetBrains Mono",monospace;font-weight:500;font-size:11px;color:var(--up);opacity:.2;transition:opacity .4s}
 .record .r.flag b{color:var(--hold)}
 .record.live .r b{opacity:1}
 .record.live .r:nth-of-type(4) b{transition-delay:.15s}.record.live .r:nth-of-type(5) b{transition-delay:.45s}
 .record.live .r:nth-of-type(6) b{transition-delay:.75s}.record.live .r:nth-of-type(7) b{transition-delay:1.05s}.record.live .r:nth-of-type(8) b{transition-delay:1.45s}
-@media(max-width:400px){.record .r:nth-of-type(6){display:none}}
+@media(max-width:400px){.record .r:nth-of-type(6){display:none}.record .r{font-size:13px}}
 
 /* act 0: hero */
 .hero{position:relative;z-index:2;min-height:100vh;min-height:100svh;display:flex;align-items:center;
@@ -293,13 +296,13 @@ p{margin:0}
 .shot .ptrack img{position:absolute;left:0;top:0;width:100%;height:100%;display:block;opacity:0;transition:opacity .55s var(--e),transform .9s var(--e)}
 .shot .ptrack img.on{opacity:1;transform:none}
 .shot .ptrack img.up{transform:translateY(3%)}
-.pcur{position:absolute;left:46%;top:72%;width:24px;height:24px;z-index:4;pointer-events:none;opacity:0;
+.pcur{position:absolute;left:46%;top:72%;width:clamp(14px,3.4vw,24px);height:clamp(14px,3.4vw,24px);z-index:4;pointer-events:none;opacity:0;
  transition:left 1s cubic-bezier(.5,0,.2,1),top 1s cubic-bezier(.5,0,.2,1),opacity .35s;filter:drop-shadow(0 3px 5px rgba(0,0,0,.65))}
 .pcur.on{opacity:1}.pcur.slow{transition:left 1.2s ease-in-out,top 1.2s ease-in-out,opacity .35s}
 .pring{position:absolute;z-index:3;width:38px;height:38px;margin:-17px 0 0 -17px;border-radius:50%;border:2px solid var(--lime);opacity:0;pointer-events:none}
 .pring.go{animation:pring .55s ease-out}
 @keyframes pring{0%{opacity:.9;transform:scale(.25)}100%{opacity:0;transform:scale(1.15)}}
-@media(max-width:640px){.shot.real{aspect-ratio:840/640}.shot .ptrack img{width:171.43%;height:auto;left:-27.8%}}
+
 
 /* act V: flip cards */
 .flips{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:56px}
@@ -418,13 +421,13 @@ main{position:relative;z-index:2}
 <div class="chaos" id="chaos" aria-hidden="true"><div class="space" id="space">
  <div class="record" id="record">
   <div class="rh"><svg><use href="#mark"/></svg>One venture record<s>live</s></div>
-  <div class="chg"><span class="ag">BD</span><div><b>Build changed the market size</b><span><s>EGP 340M</s> → EGP 17.0M · counted from the register</span></div></div>
+  <div class="chg"><span class="abd">BD</span><div class="ct"><b>Build changed the market size</b><span><del>EGP 340M</del> → EGP 450M · counted from the register</span></div></div>
   <div class="rl">Follows automatically</div>
-  <div class="r"><span class="ag">BD</span>Financial model · revenue ceiling<b>updated</b></div>
-  <div class="r"><span class="ag">DF</span>Pitch deck · market slide<b>updated</b></div>
-  <div class="r"><span class="ag">DF</span>Valuation range<b>updated</b></div>
-  <div class="r"><span class="ag">AS</span>Viability score<b>re-scored</b></div>
-  <div class="r flag"><span class="ag ae">Æ</span>Year 3 revenue now above the market<b>sent to you</b></div>
+  <div class="r"><span class="abd">BD</span><span class="rt">Financial model · revenue ceiling</span><b>updated</b></div>
+  <div class="r"><span class="abd">DF</span><span class="rt">Pitch deck · market slide</span><b>updated</b></div>
+  <div class="r"><span class="abd">DF</span><span class="rt">Valuation range</span><b>updated</b></div>
+  <div class="r"><span class="abd">AS</span><span class="rt">Viability score</span><b>re-scored</b></div>
+  <div class="r flag"><span class="abd ae">Æ</span><span class="rt">Go-to-market plan still sized for EGP 340M</span><b>sent to you</b></div>
  </div>
 </div></div>
 
@@ -446,7 +449,7 @@ main{position:relative;z-index:2}
   <div class="copy">
    <div class="act">One record</div>
    <h2 class="h2">One venture record</h2>
-   <p class="lead">Agents read and write structured state, so a change one makes is a change every other already knows about.</p>
+   <p class="lead">QuidQuo is a multi-agent system, fully integrated and orchestrated by Aether. Every agent reads and writes the same structured record, so a change one makes is a change every other already knows about.</p>
    <p class="lead" style="margin-top:12px">The deck says one thing, the model another, the data room a third. On QuidQuo they are the same record.</p>
   </div>
   <div></div>
@@ -726,7 +729,7 @@ Object.keys(PF).forEach(function(k){var t=document.createElement('div');t.classN
  PF[k].forEach(function(f,j){var im=document.createElement('img');im.alt='';im.decoding='async';im.dataset.src=f.s;t.appendChild(im);});
  pshot.insertBefore(t,pcur);TR[k]=t;});
 function load(k){[].forEach.call(TR[k].children,function(im){if(!im.src)im.src=im.dataset.src;});}
-function pt(p){var x=p[0],y=p[1];if(W<=640){x=x*1.7143-27.8;y=y*1.406;}
+function pt(p){var x=p[0],y=p[1];
  return [Math.max(4,Math.min(95,x)),Math.max(5,Math.min(93,y))];}
 function curTo(p,slow){var q=pt(p);pcur.classList.toggle('slow',!!slow);pcur.style.left=q[0]+'%';pcur.style.top=q[1]+'%';}
 function showF(k,j,up){[].forEach.call(TR[k].children,function(im,i){
