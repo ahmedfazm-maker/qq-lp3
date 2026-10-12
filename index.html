@@ -63,7 +63,7 @@ p{margin:0}
 .pin>.inner>.wrap{width:100%}
 
 /* the chaos layer: one fixed 3D space shared by Act 0 and Act I */
-.chaos{position:fixed;inset:0;z-index:1;pointer-events:none;perspective:1200px;perspective-origin:50% 45%}
+.chaos{position:fixed;inset:0;z-index:1;pointer-events:none;perspective:1200px;perspective-origin:50% 45%;overflow:hidden}
 .chaos .space{position:absolute;inset:0;transform-style:preserve-3d}
 .frag{position:absolute;left:0;top:0;transform-style:preserve-3d;will-change:transform,opacity;border-radius:14px;
  border:1px solid var(--l2);background:linear-gradient(180deg,#11150d,#0B0D08);box-shadow:0 18px 30px -18px rgba(0,0,0,.9);padding:14px 16px;
@@ -119,6 +119,15 @@ p{margin:0}
 .pl-s{display:none}@media(max-width:520px){.pl-l{display:none}.pl-s{display:inline}}
 /* act I: order */
 #order{height:260vh;z-index:2}
+.rslot{display:none}
+@media(max-width:920px){
+ #order{height:auto!important}
+ #order .pin{position:relative;height:auto;overflow-x:clip;overflow-y:visible;padding:calc(var(--navh) + env(safe-area-inset-top,0px)) 0 10px}
+ #order .pin>.inner{padding-top:22px}
+ #record{display:none}
+ .rslot{display:block;margin-top:28px}
+ .record.inline{position:relative;left:auto;top:auto;opacity:1;transform:none;width:100%;max-width:440px;margin:0 auto;will-change:auto}
+}
 .order{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:40px;align-items:center}
 .order .copy{max-width:520px;position:relative}
 .order .copy::before{content:"";position:absolute;inset:-60px -80px -60px -60px;z-index:-1;border-radius:40px;background:radial-gradient(closest-side,rgba(5,6,4,.96),rgba(5,6,4,.85) 60%,transparent)}
@@ -452,7 +461,7 @@ main{position:relative;z-index:2}
    <p class="lead">QuidQuo is a multi-agent system, fully integrated and orchestrated by Aether. Every agent reads and writes the same structured record, so a change one makes is a change every other already knows about.</p>
    <p class="lead" style="margin-top:12px">The deck says one thing, the model another, the data room a third. On QuidQuo they are the same record.</p>
   </div>
-  <div></div>
+  <div class="rslot" id="rslot" aria-hidden="true"></div>
  </div></div></div>
 </section>
 
@@ -627,11 +636,14 @@ var space=document.getElementById('space'),chaos=document.getElementById('chaos'
 var frags=FR.map(function(f,i){var d=document.createElement('div');d.className='frag'+(f[3]?' '+f[3]:'');d.style.width=f[1]+'px';d.innerHTML=f[0];space.insertBefore(d,record);
  return {el:d,w:f[1],s:f[2],ph:Math.random()*6.28};});
 var mx=0,my=0,tx=0,ty=0,chaosHid=0;
+var rslot=document.getElementById('rslot'),recM=document.createElement('div');recM.className='record inline';recM.innerHTML=record.innerHTML;rslot.appendChild(recM);
 if(fine)addEventListener('pointermove',function(e){tx=e.clientX/W-.5;ty=e.clientY/H-.5;},{passive:true});
 function chaosUpdate(t){
- var narrow=W<=920,orderR=rect(order),release=Math.max(0,-(orderR.bottom-H));if(release>H*1.2){if(!chaosHid){chaos.style.visibility='hidden';chaosHid=1;}return;}chaosHid=0;var op=prog(order);
+ var narrow=W<=920,orderR=rect(order),release=Math.max(0,-(orderR.bottom-H)),sr=null;
+ if(narrow){sr=recM.getBoundingClientRect();release=sr.bottom<-60?H*2:0;}
+ if(release>H*1.2){if(!chaosHid){chaos.style.visibility='hidden';chaosHid=1;}return;}chaosHid=0;var op=prog(order);
  var a=RM?1:eio(clamp((op-.08)/.62));
- var rc=narrow?[W*.5,H*.76]:[W*.72,(H+NAV)/2],rw=geo(record).w,rh=geo(record).h;
+ var rc=narrow?[sr.left+sr.width/2,sr.top+sr.height/2]:[W*.72,(H+NAV)/2],rw=geo(record).w,rh=geo(record).h;
  mx+=(tx-mx)*.06;my+=(ty-my)*.06;
  space.style.transform='rotateX('+(-my*5*(1-a)).toFixed(2)+'deg) rotateY('+(mx*7*(1-a)).toFixed(2)+'deg)';
  frags.forEach(function(f,i){var s=f.s,k=clamp(a*1.25-i*.025),bob=RM?0:Math.sin(t*.0006+f.ph)*10*(1-k);
@@ -643,6 +655,7 @@ function chaosUpdate(t){
   f.el.style.opacity=String((lerp(narrow?.16:.26,1,clamp(k*1.6)))*(1-clamp((k-.82)/.18))).slice(0,5);});
  var ro=clamp((a-.72)/.28);
  record.style.opacity=String(ro.toFixed(3));record.classList.toggle('live',ro>.9);
+ if(narrow)recM.classList.toggle('live',RM||sr.top<H*.72);
  record.style.transform='translate3d('+(rc[0]-rw/2).toFixed(1)+'px,'+(rc[1]-rh/2-release).toFixed(1)+'px,0) scale('+(.86+.14*ro).toFixed(3)+')';
  chaos.style.visibility=release>H?'hidden':'visible';}
 
