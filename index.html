@@ -85,6 +85,7 @@ p{margin:0}
 .record{width:min(370px,88vw)}
 .record .abd{flex:0 0 26px;width:26px;height:26px;display:inline-flex;align-items:center;justify-content:center;padding:0;margin:0;
  border-radius:7px;border:1px solid var(--l3);background:#0D1009;font-family:"JetBrains Mono",monospace;font-size:10px;line-height:1;letter-spacing:0;color:var(--pale);text-align:center}
+.record .abd svg{width:15px;height:15px}
 .record .abd.ae{color:var(--hold);border-color:rgba(255,176,32,.45);font-family:Sora,sans-serif;font-size:12px}
 .record .chg{display:flex;gap:12px;align-items:flex-start;padding:12px 14px;border-radius:13px;background:rgba(198,255,52,.07);border:1px solid rgba(198,255,52,.24);margin-bottom:14px}
 .record .chg .ct{flex:1 1 auto;min-width:0}
@@ -99,8 +100,8 @@ p{margin:0}
 .record .r.flag b{color:var(--hold)}
 .record.live .r b{opacity:1}
 .record.live .r:nth-of-type(4) b{transition-delay:.15s}.record.live .r:nth-of-type(5) b{transition-delay:.45s}
-.record.live .r:nth-of-type(6) b{transition-delay:.75s}.record.live .r:nth-of-type(7) b{transition-delay:1.05s}.record.live .r:nth-of-type(8) b{transition-delay:1.45s}
-@media(max-width:400px){.record .r:nth-of-type(6){display:none}.record .r{font-size:13px}}
+.record.live .r:nth-of-type(6) b{transition-delay:.75s}.record.live .r:nth-of-type(6) b{transition-delay:.75s}.record.live .r:nth-of-type(7) b{transition-delay:1.05s}.record.live .r:nth-of-type(8) b{transition-delay:1.45s}
+@media(max-width:400px){.record .r{font-size:13px}}
 
 /* act 0: hero */
 .hero{position:relative;z-index:2;min-height:100vh;min-height:100svh;display:flex;align-items:center;
@@ -429,14 +430,13 @@ main{position:relative;z-index:2}
 <!-- the shared 3D space: a founder's scattered raise -->
 <div class="chaos" id="chaos" aria-hidden="true"><div class="space" id="space">
  <div class="record" id="record">
-  <div class="rh"><svg><use href="#mark"/></svg>One venture record<s>live</s></div>
-  <div class="chg"><span class="abd">BD</span><div class="ct"><b>Build changed the market size</b><span><del>EGP 340M</del> → EGP 450M · counted from the register</span></div></div>
-  <div class="rl">Follows automatically</div>
-  <div class="r"><span class="abd">BD</span><span class="rt">Financial model · revenue ceiling</span><b>updated</b></div>
-  <div class="r"><span class="abd">DF</span><span class="rt">Pitch deck · market slide</span><b>updated</b></div>
-  <div class="r"><span class="abd">DF</span><span class="rt">Valuation range</span><b>updated</b></div>
-  <div class="r"><span class="abd">AS</span><span class="rt">Viability score</span><b>re-scored</b></div>
-  <div class="r flag"><span class="abd ae">Æ</span><span class="rt">Go-to-market plan still sized for EGP 340M</span><b>sent to you</b></div>
+  <div class="rh"><svg><use href="#mark"/></svg>Your venture team<s>orchestrated</s></div>
+  <div class="chg"><span class="abd"><svg><use href="#mark"/></svg></span><div class="ct"><b>From idea to capital raise</b><span>Idea → Validate → Model → Build → Prepare → Raise</span></div></div>
+  <div class="rl">Every discipline, one team</div>
+  <div class="r"><span class="abd">ID</span><span class="rt">Identity · founders and team</span><b>briefed</b></div>
+  <div class="r"><span class="abd">AS</span><span class="rt">Assessment · diagnosis and readiness</span><b>scored</b></div>
+  <div class="r"><span class="abd">BD</span><span class="rt">Build · market, model, strategy, legal and ops</span><b>drafting</b></div>
+  <div class="r"><span class="abd">DF</span><span class="rt">Deal Flow · deck, valuation, terms and investors</span><b>raising</b></div>
  </div>
 </div></div>
 
@@ -456,10 +456,10 @@ main{position:relative;z-index:2}
 <section id="order">
  <div class="pin"><div class="inner"><div class="wrap order">
   <div class="copy">
-   <div class="act">One record</div>
-   <h2 class="h2">One venture record</h2>
-   <p class="lead">QuidQuo is a multi-agent system, fully integrated and orchestrated by Aether. Every agent reads and writes the same structured record, so a change one makes is a change every other already knows about.</p>
-   <p class="lead" style="margin-top:12px">The deck says one thing, the model another, the data room a third. On QuidQuo they are the same record.</p>
+   <div class="act">The system</div>
+   <h2 class="h2">A full team of agents for every part of the raise</h2>
+   <p class="lead">QuidQuo is a fully integrated, orchestrated multi-agent system for capital formation. Specialised agents cover every discipline a venture needs, from shaping the idea to closing the round, and they work together as one team.</p>
+   <p class="lead" style="margin-top:12px">Founders, diagnosis, market, model, strategy, legal, materials, valuation and investors each have an agent that specialises in them. Work moves between them as it is done, so you go from idea to capital raise on one platform instead of a new tool and a new adviser at every stage.</p>
   </div>
   <div class="rslot" id="rslot" aria-hidden="true"></div>
  </div></div></div>
